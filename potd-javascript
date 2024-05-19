@@ -1,1 +1,31 @@
-
+ let l=0;
+        for(let i=1;i<n;i++)
+        {
+          if(arr[l]!=arr[i])
+          {
+              arr[++l]=arr[i];
+          }
+        }
+      
+    let low=0;
+        let high=l+1;
+        let h1=-1;
+        while(low<=high)
+        {
+            let mid=Math.floor((low+high)/2);
+            if(arr[mid]>=k)
+            {
+               h1=mid;
+               high=mid-1;
+            }
+            else{
+             low=mid+1;
+           
+            }
+        }
+        if(h1==-1)return arr[n-1];
+        if(arr[h1]==k)return k;
+          let h2=h1-1;
+          if(Math.abs(arr[h2]-k)<Math.abs(arr[h1]-k))
+                  return arr[h2];
+                  return arr[h1];
