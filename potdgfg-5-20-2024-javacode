@@ -1,1 +1,21 @@
-
+ long  fun(long  x,long  n,long  mod)
+	  {
+	      if(n==1)return x;
+	      if(n%2==0)
+	      {
+	        long  a=fun(x,n/2,mod);
+	           a=(a%mod*a%mod)%mod;
+	           return a;
+	      }else
+	      {
+	          long  a=fun(x,n/2,mod);
+	           a=(a%mod*a%mod)%mod;
+	           a=(a%mod*x%mod)%mod;
+	           return a;
+	      }
+	  }
+    public long PowMod(long x, long n, long m)
+    {
+        // Code here
+        return fun(x,n,m);
+    }
