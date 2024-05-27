@@ -4,7 +4,7 @@
            sum+=a[i];
             }
               long ma=0;
-               for(int i=0;i<n;i++ )
+               for(int i=0;i<n;i++)
                {  
                    long  x=a[i];
                    ma=Math.max(x,ma);
