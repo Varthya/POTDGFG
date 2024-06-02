@@ -1,0 +1,19 @@
+ArrayList<Integer>ans=new ArrayList<>();
+        int n=queries.length;
+        int prev_xor=0;
+        for(int i=n-1;i>=0;i--)
+        {
+            int d[]=queries[i];
+             if(d[0]==0)
+             { 
+                 int temp=prev_xor^d[1];
+                 ans.add(temp);
+             }
+             else
+             {
+                 prev_xor=prev_xor^d[1];
+             }
+        }
+        ans.add(prev_xor);
+        Collections.sort(ans);
+        return ans;
