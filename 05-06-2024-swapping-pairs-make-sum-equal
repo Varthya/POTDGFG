@@ -1,0 +1,35 @@
+ long sum1=0;
+           long sum2=0;
+           for(int i=0;i<n;i++)
+           {
+               sum1+=a[i];
+           }
+           for(int i=0;i<m;i++)
+           {
+               sum2+=b[i];
+           }
+           
+           long check=sum1-sum2;
+            if(check%2!=0)
+            {
+                return -1;
+            }
+        
+        check=check/2;
+        HashMap<Long,Integer>Hp=new HashMap<Long,Integer>();
+        for(int i=0;i<n;i++)
+        {
+            if(Hp.containsKey(a[i])==false)
+            {
+                Hp.put(a[i],1);
+            }
+        }
+          for(int i=0;i<m;i++)
+        {
+            if(Hp.containsKey(b[i]+check)==true)
+            {
+                return 1;
+            }
+        }
+        return -1;
+        
