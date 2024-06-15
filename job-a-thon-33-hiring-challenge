@@ -1,0 +1,16 @@
+  HashMap<Integer,Integer>mp=new HashMap<Integer,Integer>();
+        int ans=0;
+         for(int i=0;i<n;i++)
+         {
+             if(mp.containsKey(arr[i])==false)
+             {
+               mp.put(arr[i],1);  
+             }
+             else
+             {
+                 mp.put(arr[i],mp.get(arr[i])+1);
+             }
+           //  System.out.println(mp.get(arr[i]));
+             ans=Math.max(ans,mp.get(arr[i]));
+         }
+         return ans;
