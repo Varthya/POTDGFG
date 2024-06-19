@@ -1,0 +1,33 @@
+  long temp=0;
+         for(int i=0;i<n;i++)
+         {
+             temp=Math.max(arr[i],temp);
+         }
+        int count=0;
+        while(temp!=0)
+        {
+            count++;
+            temp=temp/2;
+        }
+        long  bt[]=new long[count];
+        for(int i=0;i<n;i++)
+        {
+            long y=arr[i];
+            int j=0;
+            while(y!=0)
+            {
+              long  rem=y%2;
+                bt[j]+=rem;
+                j++;
+                y=y/2;
+                
+            }
+            
+        }
+        long  ma=0;
+        for(int i=0;i<count;i++)
+        {
+            ma=Math.max(bt[i],ma);
+        }
+        int g=(int) ma;
+        return n-g;
